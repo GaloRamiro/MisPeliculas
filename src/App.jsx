@@ -21,7 +21,7 @@ function Pelicula({ titulo }) {
 }
 
 function App() {
-  const [misPeliculas, setMisPeliculas] = useState([]);
+  const [misPeliculas, setMisPeliculas] = useState(["Apocalipsis","La ventana indiscreta","Forrest Gump","Terciopelo azul"]);
   const [nuevaPelicula, setNuevaPelicula] = useState("");
   function agregarPelicula() {
     if (nuevaPelicula.trim() === "") {
@@ -41,7 +41,7 @@ function App() {
           type="text"
           value={nuevaPelicula}
           onChange={(e) => setNuevaPelicula(e.target.value)}
-          placeholder="Nueva tarea..."
+          placeholder="Nueva Pelicula..."
           style={{ flex: 1, padding: "8px" }}
         />
         <button onClick={agregarPelicula}>Agregar Pelicula</button>
