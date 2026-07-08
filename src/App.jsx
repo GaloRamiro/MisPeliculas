@@ -45,8 +45,8 @@ function App() {
           style={{ flex: 1, padding: "8px" }}
         />
         <button onClick={agregarPelicula}>Agregar Pelicula</button>
-        {misPeliculas.map((tarea, index) => (
-          <Pelicula key={index} titulo={tarea} />
+        {misPeliculas.map((pelicula, index) => (
+          <Pelicula key={index} titulo={pelicula} />
         ))}
       </div>
     </div>
