@@ -21,7 +21,12 @@ function Pelicula({ titulo }) {
 }
 
 function App() {
-  const [misPeliculas, setMisPeliculas] = useState([]);
+  const [misPeliculas, setMisPeliculas] = useState([
+    "Apocalipsis",
+    "La ventana indiscreta",
+    "Forrest Gump",
+    "Terciopelo azul",
+  ]);
   const [nuevaPelicula, setNuevaPelicula] = useState("");
   function agregarPelicula() {
     if (nuevaPelicula.trim() === "") {
@@ -37,16 +42,39 @@ function App() {
       <h1>Mis Películas Favoritas</h1>
 
       <div>
-        <input
-          type="text"
-          value={nuevaPelicula}
-          onChange={(e) => setNuevaPelicula(e.target.value)}
-          placeholder="Nueva tarea..."
-          style={{ flex: 1, padding: "8px" }}
-        />
-        <button onClick={agregarPelicula}>Agregar Pelicula</button>
-        {misPeliculas.map((tarea, index) => (
-          <Pelicula key={index} titulo={tarea} />
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            marginBottom: "15px",
+          }}
+        >
+          <input
+            type="text"
+            value={nuevaPelicula}
+            onChange={(e) => setNuevaPelicula(e.target.value)}
+            placeholder="Nueva Pelicula..."
+            style={{ flex: 1, padding: "8px" }}
+          />
+
+          <button
+            onClick={agregarPelicula}
+            style={{
+              marginLeft: "10px",
+              padding: "8px 15px",
+              backgroundColor: "#4CAF50",
+              color: "white",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+            }}
+          >
+            Agregar Película
+          </button>
+        </div>
+
+        {misPeliculas.map((pelicula, index) => (
+          <Pelicula key={index} titulo={pelicula} />
         ))}
       </div>
     </div>
